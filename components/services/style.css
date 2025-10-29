@@ -1,0 +1,20 @@
+.services {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 200px;
+}
+.services>h1{
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+}
+
+.services-boxes{
+    margin-top: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}

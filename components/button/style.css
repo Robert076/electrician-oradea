@@ -1,0 +1,29 @@
+.button {
+    padding: 10px 40px;
+    font-size: var(--font-size-l);
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--border-radius);
+    border: none;
+    transition: var(--transition);
+    text-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+
+    /* 🔽 adăugări pentru icon + text */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* spațiu între icon și text */
+}
+
+.button:hover {
+    background: var(--secondary);
+}
+
+/* 🔽 stil pentru iconul SVG */
+.button .icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0; /* previne micșorarea la text lung */
+}

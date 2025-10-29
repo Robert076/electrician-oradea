@@ -1,0 +1,36 @@
+.service{
+    width: 400px;
+    height: 400px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+}
+
+.service>.wrapper{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.service:hover{
+    background: var(--primary);
+    color: white;
+}
+
+.service>.wrapper>.title{
+    font-weight: 600;
+    font-size: var(--font-size-ll);
+}
+
+.service>.icon>img{
+    width: 42px;
+    height: 42px;
+}

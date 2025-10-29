@@ -1,4 +1,71 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #0057B8;
+  --secondary: #FFD500;
+  --border: 1px solid rgb(238, 238, 238);
+  --lightgray: rgb(250, 250, 250);
+  --transition: 0.15s all ease-in-out;
+  --text-secondary: #888;
+  --font-size-xxxl: 80px;
+  --font-size-xxl: 30px;
+  --font-size-xl: 25px;
+  --font-size-ll: 22px;
+  --font-size-l: 16px;
+  --font-size-xs: 13px;
+  --border-radius: 20px;
+  --box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.1);
+  --text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  transition: var(--transition);
+}
+
+/* Asigură că layout-ul folosește toată înălțimea */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--lightgray)
+}
+
+/* wrapper principal */
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* main ocupă tot spațiul dintre navbar și footer */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* stil footer */
+.footer {
+  background: var(--lightgray);
+  text-align: center;
+  padding: 5rem;
+  margin-top: 5rem;
+}
+
+.footer > .hook {
+  font-weight: 600;
+  font-size: var(--font-size-xxl);
+}
+
+.footer > .description {
+  color: var(--text-secondary);
+}
+
+.footer > .button {
+  margin-top: 20px;
 }

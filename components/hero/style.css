@@ -1,0 +1,51 @@
+
+.hero {
+    background: url("/hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: var(--border-radius);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-shadow: var(--text-shadow);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.hero>.buttons>.button{
+    font-size: var(--font-size-ll);
+    
+}
+
+.hero>h1{
+    font-size: var(--font-size-xxxl);
+}
+
+.hero>p {
+    font-size: var(--font-size-xl);
+}
+
+.hero>.buttons{
+    margin-top: 15px;
+    display: flex;
+    width: 450px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.hero>.buttons>button:nth-child(1):hover {
+    background: var(--primary);
+}
+.hero>.buttons>button:nth-child(2) {
+    background: var(--secondary);
+}

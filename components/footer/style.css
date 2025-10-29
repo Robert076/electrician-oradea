@@ -1,0 +1,19 @@
+.footer {
+  background: white;
+  text-align: center;
+  padding: 5rem;
+  margin-top: 5rem; 
+}
+
+.footer > .hook {
+  font-weight: 600;
+  font-size: var(--font-size-xxl);
+}
+
+.footer > .description {
+  color: var(--text-secondary);
+}
+
+.footer > .button {
+  margin-top: 20px;
+}
