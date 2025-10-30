@@ -1,0 +1,52 @@
+.review {
+  width: 400px;
+  height: 400px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* ❗ fixăm poziționarea de sus în jos */
+  padding: 20px;
+  text-align: center;
+  gap: 20px; /* distanță constantă între elemente */
+}
+
+.review > img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 50%;
+}
+
+.review > .wrapper {
+  flex: 1; /* permite textului să se întindă fără a muta imaginea */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.review > .wrapper > .author {
+  font-weight: 600;
+  font-size: var(--font-size-ll);
+  margin-bottom: 8px;
+}
+
+.review > .wrapper > .text {
+  font-size: var(--font-size-m);
+  line-height: 1.4;
+}
+
+.review > .icon.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 24px; /* ❗ menținem înălțime fixă pentru stele */
+  margin-bottom: 10px;
+}

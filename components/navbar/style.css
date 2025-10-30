@@ -2,34 +2,87 @@
   width: 100vw;
   height: 6vh;
   background: white;
-  color: white;
-  display: flex;             
-  align-items: center;       
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  box-sizing: border-box; 
   box-shadow: var(--box-shadow);
+  position: relative;
+  z-index: 100;
 }
 
-.navbar>span{
-  color: black;
+.navbar > a > span {
+  color: var(--primary);
   font-size: var(--font-size-ll);
   font-weight: 600;
 }
 
-.navbar>.nav-links> * {
+.navbar > a {
   text-decoration: none;
-  color: var(--text-secondary);
+  color: var(--secondary);
+  font-size: var(--font-size-ll);
+  font-weight: 600;
 }
 
-.navbar>.nav-links> *:hover {
-  text-decoration: none;
-  color: var(--primary);
-}
-
-.navbar>.nav-links {
-  width: 20%;
+/* 🔹 Link-uri desktop */
+.navbar > .nav-links {
+  width: 30%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.navbar > .nav-links > * {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.navbar > .nav-links > *:hover {
+  color: var(--primary);
+}
+
+/* 🔹 Iconul de meniu */
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+@media (max-width: 1000px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 6vh;
+    left: 0;
+    width: 100%; /* 🔥 acum meniul ocupă 100% din ecran pe mobil */
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: var(--box-shadow);
+    z-index: 99;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .nav-links > * {
+    color: var(--secondary);
+    font-size: 1.1rem;
+  }
+
+  /* 🔹 pentru siguranță: containerul navbarului tot 100% */
+  .navbar {
+    width: 100%;
+    padding: 0 1.5rem;
+  }
 }

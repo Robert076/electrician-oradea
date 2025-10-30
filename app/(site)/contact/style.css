@@ -1,0 +1,102 @@
+.contact-wrapper {
+    width: 100vw;
+    height: 80vh;
+    margin-top: 75px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-wrapper>h1{
+    font-size: var(--font-size-xxll);
+}
+
+.contact-wrapper>p{
+    font-size: var(--font-size-ll);
+    margin-bottom: 20px;
+}
+
+.contact-wrapper>.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-wrapper>.contact>* {
+    width: 50%;
+    height: 100%;
+}
+
+.contact-wrapper>.contact{
+    background: white;
+    height: 80%;
+    width: 100%;
+}
+
+.contact-wrapper>.contact>.left-half{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contact-wrapper>.contact>.left-half>form>.group>input, .contact-wrapper>.contact>.left-half>form>.group>textarea {
+    font-size: var(--font-size-l);
+    padding: 10px 20px;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 500px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.contact-wrapper>.contact>.left-half>form>.group>textarea {
+    height: 150px;
+}
+
+.contact-wrapper>.contact>.left-half>form>.group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.contact-wrapper>.contact>.right-half {
+    background-image: url("/hero.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+@media (max-width: 1000px) {
+  .contact-wrapper>h1{
+    font-size: var(--font-size-xxl);
+    text-align: center;
+  }
+  .contact-wrapper>.contact>.left-half>form>.group>input, .contact-wrapper>.contact>.left-half>form>.group>textarea {
+    font-size: var(--font-size-l);
+    padding: 5px 10px;
+    width: 300px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.contact-wrapper label {
+    font-size: var(--font-size-m);
+}
+
+  .contact-wrapper{
+    font-size: var(--font-size-xxl);
+    text-align: center;
+  }
+
+  .contact-wrapper>.contact>.left-half {
+    width: 100%;
+  }
+
+  .contact-wrapper>.contact>.right-half {
+    display: none;
+  }
+}
+

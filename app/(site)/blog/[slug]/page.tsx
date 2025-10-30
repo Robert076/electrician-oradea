@@ -15,7 +15,19 @@ export default async function PostPage({ params }: Props) {
 
   if (error || !post) {
     console.error("Eroare la încărcarea postării:", error?.message);
-    return <p>❌ Postare negăsită.</p>;
+    return (
+      <p
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        ❌ Postare negăsită. Se poate ca serverul sa fie offline.
+      </p>
+    );
   }
 
   // ✅ Formatează frumos data din PostgreSQL
@@ -29,7 +41,7 @@ export default async function PostPage({ params }: Props) {
   });
 
   return (
-    <div style={{ maxWidth: 600, margin: "4rem auto" }}>
+    <div style={{ maxWidth: 600, margin: "4rem auto", padding: "20px" }}>
       <h1>{post.title}</h1>
       <p style={{ marginTop: "1rem", whiteSpace: "pre-line" }}>{post.description}</p>
       <small style={{ color: "#888" }}>{formatted}</small>

@@ -1,0 +1,33 @@
+.reviews {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reviews {
+  width: 100%;
+  overflow: hidden; /* opțional, pentru siguranță */
+}
+
+.reviews > div {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 16px;
+  scroll-behavior: smooth;
+}
+
+.reviews > div::-webkit-scrollbar {
+  height: 8px;
+}
+
+.reviews > div::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+.reviews > div > div {
+  flex-shrink: 0;
+}

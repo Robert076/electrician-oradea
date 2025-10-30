@@ -1,0 +1,25 @@
+.services-details {
+    margin-top: 50px;
+    padding: 30px;
+    width: 100vw;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.services-details>.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.services-details h1 {
+    font-weight: 600;
+}
+
+.services-details>.info>.checkboxes>.under-services-thing-checkbox {
+    padding-top: 30px;
+}

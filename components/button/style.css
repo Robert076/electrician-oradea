@@ -21,6 +21,12 @@
     background: var(--secondary);
 }
 
+.button>img{
+    width: 24px;
+    height: 24px;
+
+}
+
 /* 🔽 stil pentru iconul SVG */
 .button .icon {
     width: 1.2rem;

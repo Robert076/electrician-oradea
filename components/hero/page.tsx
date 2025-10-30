@@ -6,7 +6,7 @@ const page = () => {
   return (
     <div className="hero">
       <h1>Electrician Oradea</h1>
-      <p>Servicii electrice sigure și profesionale în Oradea.</p>
+      <p>Intervenim rapid oriunde in Oradea si Bihor</p>
       <div className="buttons">
         <Button href="#footer" text="Suna-ne" />
         <Button href="#footer" text="Mesaj pe whatsapp" />

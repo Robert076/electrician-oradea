@@ -17,3 +17,9 @@
 .footer > .button {
   margin-top: 20px;
 }
+
+@media (max-width: 1000px) {
+  .footer {
+    padding: 1rem;
+  }
+}

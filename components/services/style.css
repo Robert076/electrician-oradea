@@ -18,3 +18,23 @@
     justify-content: space-evenly;
     align-items: center;
 }
+
+
+@media (max-width: 1000px) {
+    .services>h1 {
+        text-align: center;
+    }
+  .services-boxes{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .services-boxes>.service{
+    margin-bottom: 15px;
+  }
+  .services-boxes>.service:hover{
+    background: white;
+    color: black;
+  }
+}

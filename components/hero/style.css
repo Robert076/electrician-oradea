@@ -49,3 +49,28 @@
 .hero>.buttons>button:nth-child(2) {
     background: var(--secondary);
 }
+
+@media (max-width: 1000px) {
+    .hero{
+        padding: 25px;
+    }
+  .hero>h1 {
+    font-size: var(--font-size-xxll);
+  }
+  .hero>p {
+    font-size: var(--font-size-ll);
+  }
+
+  .hero>.buttons{
+    display: flex;
+    width: 450px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero>.buttons>.button{
+    margin-top: 15px;
+
+  }
+}

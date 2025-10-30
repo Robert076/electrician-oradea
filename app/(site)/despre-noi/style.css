@@ -1,0 +1,20 @@
+.despre-noi {
+    width: 100vw;
+    background: white;
+    padding: 30px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.despre-noi>h1{
+    font-weight: 600;
+    max-width: 1000px;
+}
+
+.despre-noi>p{
+    margin-top: 20px;
+    max-width: 1000px;
+}
