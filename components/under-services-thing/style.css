@@ -38,7 +38,7 @@
     width: 90%;
     height: 90%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -70,6 +70,10 @@
 .under-services-thing>.right-half>.info>h1{
     font-size: var(--font-size-xxl);
     margin-bottom: 50px;
+}
+
+.under-services-thing>.right-half>.info{
+    justify-content: flex-start;
 }
 
 

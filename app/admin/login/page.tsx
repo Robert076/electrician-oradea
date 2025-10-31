@@ -1,4 +1,5 @@
 "use client";
+import Button from "@/components/button/page";
 import { useState } from "react";
 
 export default function LoginPage() {
@@ -21,7 +22,7 @@ export default function LoginPage() {
 
   return (
     <div style={{ maxWidth: 400, margin: "5rem auto", textAlign: "center" }}>
-      <h1>Login admin</h1>
+      <h1 style={{ marginBottom: "20px" }}>Login admin</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -29,9 +30,16 @@ export default function LoginPage() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          style={{ width: "100%", padding: "8px", marginBottom: "1rem" }}
+          style={{
+            width: "300px",
+            borderRadius: "var(--border-radius)",
+            border: "var(--border)",
+            boxShadow: "var(--box-shadow)",
+            padding: "10px 20px;",
+            marginBottom: "1rem",
+          }}
         />
-        <button type="submit">Trimite linkul</button>
+        <Button text="Login" />
       </form>
       {msg && <p style={{ marginTop: "1rem" }}>{msg}</p>}
     </div>

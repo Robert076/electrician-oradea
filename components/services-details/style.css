@@ -20,6 +20,10 @@
     font-weight: 600;
 }
 
+.services-details>.info>p {
+    text-align: center;
+}
+
 .services-details>.info>.checkboxes>.under-services-thing-checkbox {
     padding-top: 30px;
 }

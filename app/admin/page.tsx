@@ -1,5 +1,6 @@
 "use client";
 
+import Button from "@/components/button/page";
 import { useState } from "react";
 
 export default function AdminPage() {
@@ -31,35 +32,75 @@ export default function AdminPage() {
   }
 
   return (
-    <div style={{ maxWidth: 500, margin: "4rem auto" }}>
+    <div
+      style={{
+        width: "100vw",
+        margin: "4rem auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        padding: "50px",
+        background: "white",
+      }}
+    >
       <h1>Creare postare nouă</h1>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
         <input
           type="text"
           placeholder="Titlu"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          style={{ display: "block", width: "100%", marginBottom: "1rem" }}
+          style={{
+            width: "400px",
+            marginTop: "20px",
+            borderRadius: "var(--border-radius)",
+            border: "var(--border)",
+            boxShadow: "var(--box-shadow)",
+            padding: "10px 20px;",
+            marginBottom: "1rem",
+          }}
         />
         <input
           type="text"
           placeholder="Rezumat scurt (apare pe prima pagină)"
           value={summary}
           onChange={(e) => setSummary(e.target.value)}
-          style={{ display: "block", width: "100%", marginBottom: "1rem" }}
+          style={{
+            width: "400px",
+            marginTop: "20px",
+            borderRadius: "var(--border-radius)",
+            border: "var(--border)",
+            boxShadow: "var(--box-shadow)",
+            padding: "10px 20px;",
+            marginBottom: "1rem",
+          }}
         />
         <textarea
           placeholder="Descriere completă"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           style={{
-            display: "block",
-            width: "100%",
-            height: 100,
+            width: "400px",
+            marginTop: "20px",
+            height: "400px",
+            borderRadius: "var(--border-radius)",
+            border: "var(--border)",
+            boxShadow: "var(--box-shadow)",
+            padding: "10px 20px;",
             marginBottom: "1rem",
+            resize: "none",
           }}
         />
-        <button type="submit">Creează</button>
+        <Button text="Creaza" />
       </form>
       {message && <p style={{ marginTop: "1rem" }}>{message}</p>}
     </div>
