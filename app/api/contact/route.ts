@@ -21,12 +21,11 @@ export async function POST(req: Request) {
       },
     });
 
-    // ✅ Email hardcodat către tine
-    const toEmail = "robertberes06@gmail.com";
+    const toEmail = "office@electricianoradea.ro";
 
     // ✅ Conținutul emailului
     const mailOptions = {
-      from: process.env.EMAIL_FROM || "formular@siteul-tau.ro",
+      from: process.env.EMAIL_FROM,
       to: toEmail,
       subject: `Mesaj nou de la ${name}`,
       html: `

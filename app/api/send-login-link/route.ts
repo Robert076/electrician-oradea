@@ -5,7 +5,7 @@ import { cookies } from "next/headers";
 
 export async function POST(req: Request) {
   const { email } = await req.json();
-  const allowed = ["robertberes06@gmail.com", "electricianul@firma.ro"];
+  const allowed = ["robertberes06@gmail.com", "office@electricianoradea.ro"];
   if (!allowed.includes(email)) {
     return NextResponse.json({ error: "Email neautorizat" }, { status: 403 });
   }

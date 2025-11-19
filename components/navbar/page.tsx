@@ -7,13 +7,8 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // 🔹 Blocăm scroll-ul când meniul e deschis
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    document.body.style.overflow = open ? "hidden" : "auto";
   }, [open]);
 
   return (
@@ -22,28 +17,43 @@ const Navbar = () => {
         <span>Electrician</span> Oradea
       </Link>
 
-      {/* 🔹 Butonul de meniu / X */}
-      <div className="menu-icon" onClick={() => setOpen(!open)}>
-        {open ? <X size={28} /> : <Menu size={28} />}
+      {/* ICON MENIU */}
+      <div className="menu-icon" onClick={() => setOpen(true)}>
+        <Menu size={28} />
       </div>
 
-      {/* 🔹 Meniul full-screen */}
-      <div className={`nav-links ${open ? "active" : ""}`}>
-        <Link href="/" onClick={() => setOpen(false)}>
-          Acasa
-        </Link>
-        <Link href="/despre-noi" onClick={() => setOpen(false)}>
-          Despre noi
-        </Link>
-        <Link href="/servicii" onClick={() => setOpen(false)}>
-          Servicii
-        </Link>
-        <Link href="/contact" onClick={() => setOpen(false)}>
-          Contact
-        </Link>
-        <Link href="/blog" onClick={() => setOpen(false)}>
-          Blog
-        </Link>
+      {/* MENIU FULLSCREEN EXACT CA EXEMPLUL 2 */}
+      <div className={`mobile-menu ${open ? "show" : ""}`}>
+        <div className="close-btn" onClick={() => setOpen(false)}>
+          <X size={38} />
+        </div>
+
+        <ul>
+          <li onClick={() => setOpen(false)}>
+            <Link href="/">Acasa</Link>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <Link href="/despre-noi">Despre noi</Link>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <Link href="/servicii">Servicii</Link>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <Link href="/contact">Contact</Link>
+          </li>
+          <li onClick={() => setOpen(false)}>
+            <Link href="/blog">Blog</Link>
+          </li>
+        </ul>
+      </div>
+
+      {/* Desktop links rămân la fel */}
+      <div className="nav-links">
+        <Link href="/">Acasa</Link>
+        <Link href="/despre-noi">Despre noi</Link>
+        <Link href="/servicii">Servicii</Link>
+        <Link href="/contact">Contact</Link>
+        <Link href="/blog">Blog</Link>
       </div>
     </div>
   );

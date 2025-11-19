@@ -1,18 +1,11 @@
-import { supabase } from "@/lib/supabase";
-import Link from "next/link";
 import "./style.css";
 import Button from "@/components/button/page";
 
 export default async function BlogPage() {
-  const { data: posts, error } = await supabase
-    .from("posts")
-    .select("id, title, summary, slug, created_at")
-    .order("id", { ascending: false });
-
-  if (error) {
-    console.error("Eroare la citirea postărilor:", error.message);
-    return <p>❌ Nu s-au putut încărca postările.</p>;
-  }
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/admin/posts`, {
+    cache: "no-store",
+  });
+  const posts = await res.json();
 
   if (!posts?.length) {
     return (
@@ -27,7 +20,7 @@ export default async function BlogPage() {
     <div className="blog">
       <h1>Postări recente</h1>
       <p>Vezi ultimele postări și sfaturi de la specialiștii noștri în electricitate.</p>
-      {posts.map((p) => {
+      {posts.map((p: any) => {
         const date = new Date(p.created_at).toLocaleString("ro-RO", {
           day: "2-digit",
           month: "long",
