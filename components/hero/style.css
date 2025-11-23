@@ -32,6 +32,7 @@
 
 .hero>p {
     font-size: var(--font-size-xl);
+    margin-top: 25px;
 }
 
 .hero>.buttons{

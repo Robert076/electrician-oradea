@@ -11,7 +11,7 @@
     font-weight: 600;
 }
 
-.services-boxes{
+.services-boxes, .services-boxes-2{
     margin-top: 50px;
     display: flex;
     width: 100%;
@@ -19,22 +19,29 @@
     align-items: center;
 }
 
+.services-boxes-2 {
+  width: 75%;
+}
+
 
 @media (max-width: 1000px) {
     .services>h1 {
         text-align: center;
     }
-  .services-boxes{
+  .services-boxes, .services-boxes-2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .services-boxes>.service{
+  .services-boxes>.service, .services-boxes-2>.service{
     margin-bottom: 15px;
   }
-  .services-boxes>.service:hover{
+  .services-boxes>.service:hover, .services-boxes-2>.service:hover{
     background: white;
     color: black;
+  }
+  .services-boxes-2 {
+    margin-top: 0;
   }
 }

@@ -31,6 +31,23 @@ const Services = () => {
           text="Modernizăm tablourile electrice vechi și înlocuim siguranțele pentru o distribuție eficientă și sigură a curentului. Folosim componente certificate, asigurând protecție maximă pentru echipamente și locuință."
         />
       </div>
+      <div className="services-boxes-2">
+        <Service
+          iconPath="/constructor.svg"
+          title="Verificări, depanare și diagnostic rapid"
+          text="Efectuăm diagnostic profesionist pentru instalații electrice, identificăm rapid probleme precum scurtcircuite, cabluri slăbite sau suprasarcini și oferim soluții imediate, sigure și durabile."
+        />
+        <Service
+          iconPath="/smart-home.svg"
+          title="Automatizări & Smart Home"
+          text="Transformăm locuința într-una inteligentă: iluminat automat, control din telefon, senzori smart, siguranțe conectate, automatizări pentru porți și sisteme moderne de monitorizare."
+        />
+        <Service
+          iconPath="/security.svg"
+          title="Sisteme de securitate, camere & interfoane"
+          text="Instalăm camere video, interfoane, videocitofon și sisteme de control acces. Soluții complete pentru protejarea locuinței sau afacerii tale, configurate profesionist."
+        />
+      </div>
     </div>
   );
 };

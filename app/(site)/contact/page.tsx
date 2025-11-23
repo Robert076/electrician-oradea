@@ -55,7 +55,7 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <h1>Ai nevoie de servicii electrice?</h1>
-      <p>Haide sa luam legatura!</p>
+      <p>Haide să luăm legătura!</p>
 
       <div className="contact">
         <div className="left-half">

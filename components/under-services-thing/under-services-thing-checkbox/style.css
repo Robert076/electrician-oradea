@@ -9,6 +9,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .under-services-thing-checkbox>.info>h1{

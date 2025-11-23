@@ -24,6 +24,35 @@
   font-weight: 600;
 }
 
+.navbar img {
+  height: 100%;
+}
+
+.navbar .logo-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .logo-wrapper a {
+  text-decoration: none;
+}
+
+.navbar .logo-wrapper span {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: var(--font-size-ll);
+  margin-left: 15px;
+}
+
+.navbar .logo-wrapper a {
+  color: var(--secondary);
+  font-weight: 600;
+  font-size: var(--font-size-ll);
+
+}
+
 /* 🔹 Link-uri desktop */
 .navbar > .nav-links {
   width: 30%;

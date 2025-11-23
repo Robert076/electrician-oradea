@@ -5,27 +5,21 @@ const DespreNoi = () => {
     <div className="despre-noi">
       <h1>Cine suntem și de ce Oradea are încredere în noi.</h1>
       <p style={{ maxWidth: "700px" }}>
-        Suntem o echipă de electricieni autorizați, născută dintr-un singur scop: să aducem
-        siguranță și profesionalism în fiecare locuință din Oradea.
+        Proiectul Electrician Oradea a luat naștere din dorința de a crește și menține ridicat
+        standardul de servicii electrice pe piața din Oradea.
       </p>
       <p style={{ maxWidth: "700px" }}>
-        Totul a început în anul 2015, când fondatorul nostru, un electrician pasionat și
-        perfecționist, a observat că majoritatea intervențiilor electrice din oraș erau făcute
-        în grabă, fără garanție și fără transparență. Așa a apărut Electrician Oradea — o
-        echipă dedicată reparațiilor corecte, explicate pe înțelesul oricui, cu respect pentru
-        client și pentru locuința lui.
+        Ne-am format ca o echipă de profesioniști cu o experiență cumulată de peste 20 de ani
+        în industrie. Suntem oameni dedicați și pasionați de electrică în construcții, cu
+        aplicabilitate atât în proiecte rezidențiale cât și în cele comerciale și industriale.
       </p>
       <p style={{ maxWidth: "700px" }}>
-        În timp, ne-am extins serviciile și am format o rețea de profesioniști de încredere.
-        Fie că este vorba despre montaj, reparații sau proiecte complexe de instalații, abordăm
-        fiecare lucrare cu seriozitate și atenție la detalii. Experiența acumulată ne permite
-        să oferim soluții rapide, sigure și durabile pentru fiecare client.
+        Am considerat că și Oradea merită să se bucure de servicii la cel mai înalt nivel, la
+        fel ca în străinătate. Credem cu tărie că liniștea oricărui proprietar începe cu
+        siguranța unui proiect electric bine gândit și implementat.
       </p>
       <p style={{ maxWidth: "700px" }}>
-        Misiunea noastră este simplă: să fim electricienii pe care te poți baza, indiferent de
-        situație. Credem în comunicare clară, în prețuri corecte și în munca bine făcută. De
-        aceea, Oradea ne cunoaște, ne recomandă și ne cheamă de fiecare dată când este nevoie
-        de un specialist de încredere.
+        Pentru noi, fiecare circuit e o poveste cu final fericit.
       </p>
     </div>
   );

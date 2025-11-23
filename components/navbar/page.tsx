@@ -13,15 +13,16 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <Link className="logo" href="/">
-        <span>Electrician</span> Oradea
-      </Link>
-
+      <div className="logo-wrapper">
+        <img src="/logo.png" alt="" />
+        <Link className="logo" href="/">
+          <span>Electrician</span> Oradea
+        </Link>
+      </div>
       {/* ICON MENIU */}
       <div className="menu-icon" onClick={() => setOpen(true)}>
         <Menu size={28} />
       </div>
-
       {/* MENIU FULLSCREEN EXACT CA EXEMPLUL 2 */}
       <div className={`mobile-menu ${open ? "show" : ""}`}>
         <div className="close-btn" onClick={() => setOpen(false)}>
@@ -46,7 +47,6 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-
       {/* Desktop links rămân la fel */}
       <div className="nav-links">
         <Link href="/">Acasa</Link>

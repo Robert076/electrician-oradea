@@ -1,11 +1,12 @@
 .under-services-thing{
-    height: 80vh;
+    min-height: 90vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 200px;
     background: white;
+    border: 1px solid green;
 }
 
 .under-services-thing>.left-half {
@@ -14,12 +15,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid blue;
 }
 
 .under-services-thing>.left-half>img {
     height: 90%;
     width: 90%;
     border: none;
+    border: 1px solid red;
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     object-fit: cover;

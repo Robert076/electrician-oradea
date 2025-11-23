@@ -12,7 +12,13 @@ const Footer = () => {
       <p className="description">
         Sună acum sau trimite-ne un mesaj pe WhatsApp — răspundem imediat.
       </p>
-      <Button href="tel:075654323" text="0744605023" isPhone={true} />
+      <div className="buttons">
+        <Button href="tel:0729914750" text="0729914750" isPhone={true} />
+        <Button
+          href="https://wa.me/0729914750?text=Salut!+Am+văzut+site-ul+tău+și+aș+vrea+o+informație."
+          text="Mesaj pe whatsapp"
+        />
+      </div>
     </footer>
   );
 };
