@@ -7,9 +7,17 @@ interface ButtonProps {
   text: string;
   href?: string;
   isPhone?: boolean;
+  isWhatsapp?: boolean;
+  isFacebook?: boolean;
 }
 
-export default function Button({ text, href, isPhone = false }: ButtonProps) {
+export default function Button({
+  text,
+  href,
+  isPhone = false,
+  isWhatsapp = false,
+  isFacebook = false,
+}: ButtonProps) {
   const router = useRouter();
 
   return (
@@ -20,6 +28,8 @@ export default function Button({ text, href, isPhone = false }: ButtonProps) {
       }}
     >
       {isPhone && <img src="/phone.svg" alt="" />}
+      {isWhatsapp && <img src="/whatsapp.svg" alt="" />}
+      {isFacebook && <img src="/facebook.svg" alt="" />}
       {text}
     </button>
   );

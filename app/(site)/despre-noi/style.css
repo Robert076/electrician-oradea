@@ -11,7 +11,11 @@
 }
 .despre-noi>h1{
     font-weight: 600;
-    max-width: 1000px;
+    width: 100vw;
+    padding: 45px;
+    color: white;
+    text-shadow: var(--text-shadow);
+    background-size: cover;
 }
 
 .despre-noi>p{

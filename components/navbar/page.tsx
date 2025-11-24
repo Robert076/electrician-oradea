@@ -40,6 +40,9 @@ const Navbar = () => {
             <Link href="/servicii">Servicii</Link>
           </li>
           <li onClick={() => setOpen(false)}>
+            <Link href="/preturi">Prețuri</Link>
+          </li>
+          <li onClick={() => setOpen(false)}>
             <Link href="/contact">Contact</Link>
           </li>
           <li onClick={() => setOpen(false)}>
@@ -52,6 +55,7 @@ const Navbar = () => {
         <Link href="/">Acasa</Link>
         <Link href="/despre-noi">Despre noi</Link>
         <Link href="/servicii">Servicii</Link>
+        <Link href="/preturi">Prețuri</Link>
         <Link href="/contact">Contact</Link>
         <Link href="/blog">Blog</Link>
       </div>

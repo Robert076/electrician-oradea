@@ -16,8 +16,15 @@
     flex-direction: column;
 }
 
-.services-details h1 {
+.services-details>.info> h1 {
     font-weight: 600;
+    width: 100vw;
+    padding: 45px;
+    text-align: center;
+    color: white;
+    text-shadow: var(--text-shadow);
+    background-position: center;
+    background-size: cover;
 }
 
 .services-details>.info>p {

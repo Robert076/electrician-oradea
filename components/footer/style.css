@@ -3,6 +3,10 @@
   text-align: center;
   padding: 5rem;
   margin-top: 5rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer > .hook {
@@ -26,6 +30,12 @@
   height: 40px;
   margin: 5px;
   font-size: 18px;
+  min-width: 200px;
+}
+
+.footer .copyright {
+  margin-top: 10px;
+  color: var(--text-secondary);
 }
 
 .footer>.buttons>button:nth-child(1):hover {
@@ -33,6 +43,71 @@
 }
 .footer>.buttons>button:nth-child(2) {
     background: var(--secondary);
+}
+
+.footer .anpc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .anpc img {
+  width: 200px;
+  margin: 5px;
+}
+
+.footer .down-footer-wrapper {
+  margin: 50px;
+  margin-top: 100px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;  /* ALINIERE LA STÂNGA */
+  text-align: left;         /* TEXT ALINIAT LA STÂNGA */
+}
+
+.footer .links-footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.footer .adresa-footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.footer .social-media-footer {
+display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: var(--text-secondary)
+
+}
+
+.footer .social-media-footer a{
+  color: var(--text-secondary)
+
+}
+
+.footer .adresa-footer a{
+  color: var(--text-secondary);
+}
+
+.footer .links-footer p {
+  color:var(--text-secondary);
+}
+
+.footer .links-footer a{
+  color: var(--text-secondary);
+}
+
+.footer .adresa-footer p {
+  color: var(--text-secondary)
 }
 
 @media (max-width: 1000px) {
@@ -45,6 +120,22 @@
   }
 
   .footer>.buttons>.button {
-    width: 250px;
+    width: 300px;
+  }
+
+  .footer .down-footer-wrapper {
+    width: 100%;
+    flex-direction: column;      /* ELEMENTELE PE O SINGURA COLUMNA */
+    align-items: flex-start;     /* ALINIERE LA STANGA */
+    gap: 40px;                   /* SPATIERE FRUMOASA INTRE SECTIUNI */
+    margin: 30px;              /* MARGIN MAI MIC PE TELEFON */
+  }
+
+  .footer .down-footer-wrapper > div {
+    width: 100%;                 /* FIECARE DIV IA LATIMEA COMPLETA */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }

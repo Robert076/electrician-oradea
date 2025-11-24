@@ -1,0 +1,24 @@
+.post-page {
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.post-page h1{
+    padding: 45px;
+    width: 100vw;
+    color: white;
+    text-shadow: var(--text-shadow);
+    background-size: cover;
+    background-position: center;
+}
+.post-page p, .post-page small {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+}

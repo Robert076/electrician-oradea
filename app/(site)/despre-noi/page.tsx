@@ -3,7 +3,14 @@ import "./style.css";
 const DespreNoi = () => {
   return (
     <div className="despre-noi">
-      <h1>Cine suntem și de ce Oradea are încredere în noi.</h1>
+      <h1
+        style={{
+          backgroundImage: "url('/hero3.jpg')",
+          backgroundPosition: "center",
+        }}
+      >
+        Cine suntem și de ce Oradea are încredere în noi.
+      </h1>
       <p style={{ maxWidth: "700px" }}>
         Proiectul Electrician Oradea a luat naștere din dorința de a crește și menține ridicat
         standardul de servicii electrice pe piața din Oradea.

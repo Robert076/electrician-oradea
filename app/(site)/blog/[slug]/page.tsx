@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import "./style.css";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -21,16 +22,20 @@ export default async function PostPage({ params }: Props) {
           width: "100vw",
           height: "100vh",
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "flex-start",
           alignItems: "center",
         }}
       >
-        ❌ Postare negăsită. Se poate ca serverul sa fie offline.
+        ❌ Postare negăsită. Se poate ca serverul să fie offline.
       </p>
     );
   }
 
-  // ✅ Formatează frumos data din PostgreSQL
+  // 🟦 Background random pentru h1
+  const images = ["/hero.jpg", "/hero2.jpg", "/hero3.jpg"];
+  const randomBg = images[Math.floor(Math.random() * images.length)];
+
+  // Formatăm data
   const date = new Date(post.created_at);
   const formatted = date.toLocaleString("ro-RO", {
     day: "2-digit",
@@ -41,9 +46,11 @@ export default async function PostPage({ params }: Props) {
   });
 
   return (
-    <div style={{ maxWidth: 600, margin: "4rem auto", padding: "20px" }}>
-      <h1>{post.title}</h1>
+    <div className="post-page">
+      <h1 style={{ backgroundImage: `url(${randomBg})` }}>{post.title}</h1>
+
       <p style={{ marginTop: "1rem", whiteSpace: "pre-line" }}>{post.description}</p>
+
       <small style={{ color: "#888" }}>{formatted}</small>
     </div>
   );

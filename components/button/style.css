@@ -9,7 +9,6 @@
     transition: var(--transition);
     text-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
-
     /* 🔽 adăugări pentru icon + text */
     display: inline-flex;
     align-items: center;
@@ -18,7 +17,7 @@
 }
 
 .button:hover {
-    background: var(--secondary);
+    scale: 1.05;
 }
 
 .button>img{

@@ -2,7 +2,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary: #0057B8;
-  --secondary: #FFD500;
+  --secondary: rgb(31, 232, 31);
   --border: 1px solid rgb(238, 238, 238);
   --lightgray: rgb(250, 250, 250);
   --transition: 0.1s all ease-in-out;
@@ -26,7 +26,7 @@
   padding: 0;
   box-sizing: border-box !important;
   transition: var(--transition);
-}
+} 
 
 /* Asigură că layout-ul folosește toată înălțimea */
 html,

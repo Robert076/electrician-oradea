@@ -1,0 +1,30 @@
+.prices {
+    background: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.prices h1 {
+    width: 100vw;
+    color: white;
+    padding: 45px;
+    text-shadow: var(--text-shadow);
+    background-position: center;
+    background-size: cover;
+}
+
+.prices .price-category{
+    padding: 30px;
+
+    width: 50%;
+}
+
+@media (max-width: 1000px) {
+    .prices .price-category {
+        width: 80%;
+    }
+}
