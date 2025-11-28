@@ -79,10 +79,31 @@
         padding: 25px;
     }
     .hero h1 {
-        font-size: var(--font-size-xxll);
+        font-size: 24px;
     }
     .hero p {
-        font-size: var(--font-size-ll);
+        font-size: 19px;
+    }
+    .hero .buttons {
+        width: 450px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero .buttons .button {
+        margin-top: 15px;
+    }
+}
+
+@media (max-height: 500px) {
+    .hero {
+        padding: 25px;
+    }
+    .hero h1 {
+        font-size: 24px;
+    }
+    .hero p {
+        font-size: 19px;
+        display: none;
     }
     .hero .buttons {
         width: 450px;

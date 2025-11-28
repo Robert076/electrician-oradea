@@ -17,15 +17,14 @@ const Footer = () => {
         <Button href="tel:0729914750" text="0729914750" isPhone={true} />
         <Button
           isWhatsapp={true}
-          href="https://wa.me/0729914750?text=Salut!+Am+văzut+site-ul+tău+și+aș+vrea+o+informație."
+          href="https://wa.me/40729914750?text=Bun%C4%83%20ziua%2C%20v%C4%83%20pot%20suna%3F"
           text="Mesaj pe whatsapp"
         />
       </div>
       <div className="down-footer-wrapper">
         <div className="links-footer">
           <p>Link-uri utile</p>
-          <Link href="#">Facebook</Link>
-          <Link href="#">Formular de contact</Link>
+          <Link href="/contact">Formular de contact</Link>
         </div>
         <div className="adresa-footer">
           <p>Informații de contact</p>
@@ -34,7 +33,7 @@ const Footer = () => {
         </div>
         <div className="social-media-footer">
           <p>Social media</p>
-          <Link href="mail:office@electricianoradea.ro">Facebook</Link>
+          <Link href="https://www.facebook.com/electricianoradea2025">Facebook</Link>
         </div>
       </div>
       <p className="copyright">&copy;&nbsp;Copyright Electrician Oradea 2025.</p>

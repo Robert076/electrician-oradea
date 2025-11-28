@@ -31,7 +31,14 @@
     text-align: center;
 }
 
+.services-details>.info>.checkboxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .services-details>.info>.checkboxes>.under-services-thing-checkbox {
     padding-top: 30px;
+    width: 80%;
 }
 

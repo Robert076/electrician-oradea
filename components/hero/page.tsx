@@ -37,7 +37,7 @@ const page = () => {
         <Button isPhone={true} href="tel:0729914750" text="Sună-ne" />
         <Button
           isWhatsapp={true}
-          href="https://wa.me/0729914750?text=Salut!+Am+văzut+site-ul+tău+și+aș+vrea+o+informație."
+          href="https://wa.me/40729914750?text=Bun%C4%83%20ziua%2C%20v%C4%83%20pot%20suna%3F"
           text="Mesaj pe whatsapp"
         />
       </div>
