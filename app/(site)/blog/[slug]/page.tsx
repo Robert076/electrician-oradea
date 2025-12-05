@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import "./style.css";
+import Button from "@/components/button/page";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -10,7 +11,7 @@ export default async function PostPage({ params }: Props) {
 
   const { data: post, error } = await supabase
     .from("posts")
-    .select("title, description, created_at")
+    .select("title, description, created_at, imageurl")
     .eq("slug", slug)
     .single();
 
@@ -31,10 +32,6 @@ export default async function PostPage({ params }: Props) {
     );
   }
 
-  // 🟦 Background random pentru h1
-  const images = ["/hero.jpg", "/hero2.jpg", "/hero3.jpg"];
-  const randomBg = images[Math.floor(Math.random() * images.length)];
-
   // Formatăm data
   const date = new Date(post.created_at);
   const formatted = date.toLocaleString("ro-RO", {
@@ -47,11 +44,17 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <div className="post-page">
-      <h1 style={{ backgroundImage: `url(${randomBg})` }}>{post.title}</h1>
+      {/* Mutăm imaginea ca background al h1 pentru un banner */}
+      <h1 style={{ backgroundImage: `url(${post.imageurl})` }}>{post.title}</h1>
 
-      <p style={{ marginTop: "1rem", whiteSpace: "pre-line" }}>{post.description}</p>
+      {/* Container nou pentru lizibilitate maximă */}
+      <div className="content-container">
+        <small className="post-date">{formatted}</small>
 
-      <small style={{ color: "#888" }}>{formatted}</small>
+        {/* Mutăm descrierea în interiorul containerului */}
+        <p className="post-description">{post.description}</p>
+      </div>
+      <Button text="Înapoi la postări" href="/blog" />
     </div>
   );
 }

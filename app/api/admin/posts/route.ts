@@ -4,8 +4,10 @@ import { supabaseAdmin } from "@/lib/supabaseAdmin";
 export async function GET() {
   const { data, error } = await supabaseAdmin
     .from("posts")
-    .select("id, title, summary, slug, created_at")
+    .select("id, title, summary, slug, created_at, imageurl")
     .order("id", { ascending: false });
+
+  console.log(data);
 
   if (error) {
     console.error("Eroare la admin fetch:", error.message);
