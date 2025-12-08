@@ -18,6 +18,7 @@ export default async function BlogPage() {
     return (
       <div className="blog">
         <h1>Blog</h1>
+        {isAdmin && <Button href="/admin/" text="Crează o postare nouă" />}
         <p>Nicio postare momentan.</p>
       </div>
     );
