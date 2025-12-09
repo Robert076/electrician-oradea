@@ -76,6 +76,7 @@
     font-size: var(--font-size-xxl);
     text-align: center;
   }
+  
   .contact-wrapper>.contact>.left-half>form>.group>input, .contact-wrapper>.contact>.left-half>form>.group>textarea {
     font-size: var(--font-size-l);
     padding: 5px 10px;
