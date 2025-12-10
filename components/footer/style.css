@@ -1,5 +1,5 @@
 .footer {
-  background: white;
+  background: var(--primary);
   text-align: center;
   padding: 5rem;
   margin-top: 5rem; 
@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: white;
 }
 
 .footer > .hook {
@@ -15,7 +16,7 @@
 }
 
 .footer > .description {
-  color: var(--text-secondary);
+  color: white;
   font-size: var(--font-size-ll);
 }
 
@@ -35,11 +36,13 @@
 
 .footer .copyright {
   margin-top: 10px;
-  color: var(--text-secondary);
 }
 
+.footer>.buttons>button:nth-child(1){
+  background: red;
+}
 .footer>.buttons>button:nth-child(1):hover {
-    background: var(--primary);
+    background: red;
 }
 .footer>.buttons>button:nth-child(2) {
     background: var(--secondary);
@@ -85,29 +88,29 @@ display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  color: var(--text-secondary)
+  color: white;
 
 }
 
 .footer .social-media-footer a{
-  color: var(--text-secondary)
+  color: white;
 
 }
 
 .footer .adresa-footer a{
-  color: var(--text-secondary);
+  color: white;
 }
 
 .footer .links-footer p {
-  color:var(--text-secondary);
+  color: white;
 }
 
 .footer .links-footer a{
-  color: var(--text-secondary);
+  color: white;
 }
 
 .footer .adresa-footer p {
-  color: var(--text-secondary)
+  color: white;
 }
 
 @media (max-width: 1000px) {

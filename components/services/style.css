@@ -6,42 +6,50 @@
     flex-direction: column;
     margin-top: 200px;
 }
-.services>h1{
+
+.services > h1 {
     font-size: var(--font-size-xxl);
     font-weight: 600;
+    text-align: center;
 }
 
-.services-boxes, .services-boxes-2{
+/* Wrapper unic pentru toate serviciile */
+.services-container {
     margin-top: 50px;
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.services-boxes-2 {
-  width: 75%;
-}
-
-
-@media (max-width: 1000px) {
-    .services>h1 {
-        text-align: center;
-    }
-  .services-boxes, .services-boxes-2{
-    flex-direction: column;
+    flex-wrap: wrap; /* permite să treacă pe rândul următor dacă nu încape */
     justify-content: center;
-    align-items: center;
-  }
+    gap: 30px; /* distanță între box-uri */
+}
 
-  .services-boxes>.service, .services-boxes-2>.service{
-    margin-bottom: 15px;
-  }
-  .services-boxes>.service:hover, .services-boxes-2>.service:hover{
-    background: white;
-    color: black;
-  }
-  .services-boxes-2 {
-    margin-top: 0;
-  }
+/* Service individual */
+.services-container > .service {
+    flex: 0 1 30%; /* default: 3 pe rând */
+    min-width: 250px;
+    box-sizing: border-box;
+}
+
+/* Laptop / ecrane medii: 2 pe rând */
+@media (max-width: 1400px) and (min-width: 1000px) {
+    .services-container > .service {
+        flex: 0 1 45%; /* 2 pe rând */
+    }
+}
+
+/* Mobil / tablete: 1 pe rând */
+@media (max-width: 1000px) {
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-container > .service {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .services-container > .service:hover {
+        background: white;
+        color: black;
+    }
 }
