@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function POST(req: Request) {
   try {
@@ -10,36 +12,25 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Câmpuri obligatorii lipsă." }, { status: 400 });
     }
 
-    // ✅ Configurare transporter (folosește aceleași variabile ca în exemplul tău)
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_SERVER_HOST!,
-      port: Number(process.env.EMAIL_SERVER_PORT!),
-      secure: false, // true dacă folosești port 465
-      auth: {
-        user: process.env.EMAIL_SERVER_USER!,
-        pass: process.env.EMAIL_SERVER_PASS!,
-      },
-    });
-
     const toEmail = "office@electricianoradea.ro";
 
     // ✅ Conținutul emailului
-    const mailOptions = {
-      from: process.env.EMAIL_FROM,
+    const htmlContent = `
+      <h2>Ai primit un mesaj nou din formularul de contact:</h2>
+      <p><strong>Nume:</strong> ${name}</p>
+      <p><strong>Telefon:</strong> ${phone || "necompletat"}</p>
+      <p><strong>Email:</strong> ${email || "necompletat"}</p>
+      <p><strong>Mesaj:</strong></p>
+      <p>${message}</p>
+    `;
+
+    // ✅ Trimiterea emailului cu Resend
+    await resend.emails.send({
+      from: "office@electricianoradea.ro",
       to: toEmail,
       subject: `Mesaj nou de la ${name}`,
-      html: `
-        <h2>Ai primit un mesaj nou din formularul de contact:</h2>
-        <p><strong>Nume:</strong> ${name}</p>
-        <p><strong>Telefon:</strong> ${phone || "necompletat"}</p>
-        <p><strong>Email:</strong> ${email || "necompletat"}</p>
-        <p><strong>Mesaj:</strong></p>
-        <p>${message}</p>
-      `,
-    };
-
-    // ✅ Trimiterea emailului
-    await transporter.sendMail(mailOptions);
+      html: htmlContent,
+    });
 
     return NextResponse.json({ success: true });
   } catch (err) {
