@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import Button from "@/components/button/page";
 import "./style.css";
+import { CONTACT_TEXT_HEADER, CONTACT_TEXT_SUBHEADER } from "@/lib/constants";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -54,8 +55,8 @@ const Contact = () => {
 
   return (
     <div className="contact-wrapper">
-      <h1>Ai nevoie de servicii electrice?</h1>
-      <p>Haide să luăm legătura!</p>
+      <h1>{CONTACT_TEXT_HEADER}</h1>
+      <p>{CONTACT_TEXT_SUBHEADER}</p>
 
       <div className="contact">
         <div className="left-half">

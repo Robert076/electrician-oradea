@@ -1,31 +1,39 @@
+import {
+  SERVICIU_1_TEXT_DESCRIERE,
+  SERVICIU_1_TEXT_TITLU,
+  SERVICIU_2_TEXT_DESCRIERE,
+  SERVICIU_2_TEXT_TITLU,
+  SERVICIU_3_TEXT_DESCRIERE,
+  SERVICIU_3_TEXT_TITLU,
+  SERVICIU_4_TEXT_DESCRIERE,
+  SERVICIU_4_TEXT_TITLU,
+  SERVICIU_5_TEXT_DESCRIERE,
+  SERVICIU_5_TEXT_TITLU,
+  SERVICIU_CALL_TO_ACTION,
+} from "@/lib/constants";
 import "./style.css";
 import UnderServicesThingCheckbox from "@/components/under-services-thing/under-services-thing-checkbox/page";
 
-const servicesData = [
+export const servicesData = [
   {
-    title: "Urgențe electrice 24/7",
-    description:
-      "Intervenții rapide pentru pene de curent, prize cu fum, scurtcircuite, siguranțe care sar și cabluri topite. Diagnostic pe loc, reparație rapidă și testare completă.",
+    title: SERVICIU_1_TEXT_TITLU,
+    description: SERVICIU_1_TEXT_DESCRIERE,
   },
   {
-    title: "Montaj & Reparații electrice",
-    description:
-      "Montaj prize, întrerupătoare, corpuri de iluminat, reparații circuite și conexiuni slăbite, înlocuire cabluri vechi și instalare prize sigure în baie sau bucătărie.",
+    title: SERVICIU_2_TEXT_TITLU,
+    description: SERVICIU_2_TEXT_DESCRIERE,
   },
   {
-    title: "Tablouri & Siguranțe electrice",
-    description:
-      "Montaj tablouri moderne cu protecție diferențială, reconfigurare circuite pentru consumatori mari și înlocuire siguranțe vechi din porțelan.",
+    title: SERVICIU_3_TEXT_TITLU,
+    description: SERVICIU_3_TEXT_DESCRIERE,
   },
   {
-    title: "Verificări periodice & Audit electric",
-    description:
-      "Verificări complete ale instalației: prize, siguranțe, tablouri, împământare și consum anormal. Recomandate anual pentru case vechi și la 2–3 ani pentru locuințe noi.",
+    title: SERVICIU_4_TEXT_TITLU,
+    description: SERVICIU_4_TEXT_DESCRIERE,
   },
   {
-    title: "Automatizări & Smart Home",
-    description:
-      "Iluminat automat, control prin telefon, senzori inteligenți, siguranțe smart, video-interfon, sisteme de control acces și automatizări pentru porți.",
+    title: SERVICIU_5_TEXT_TITLU,
+    description: SERVICIU_5_TEXT_DESCRIERE,
   },
 ];
 
@@ -52,9 +60,7 @@ const MainServices = () => {
         </div>
 
         <p style={{ marginTop: "50px", maxWidth: "1000px" }} className="subtext">
-          Intervenim oriunde în Bihor și în toate cartierele din Oradea — Rogerius, Ioșia,
-          Nufărul, Cantemir, Oncea, Calea Aradului, Episcopia, Grigorescu, Bălcescu, Velenta,
-          Decebal, Nicolae Iorga și zonele apropiate.
+          {SERVICIU_CALL_TO_ACTION}
         </p>
       </div>
     </div>

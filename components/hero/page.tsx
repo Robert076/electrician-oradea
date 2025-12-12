@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Button from "../button/page";
 import "./style.css";
+import { HERO_TEXT_CALL_TO_ACTION, HERO_TEXT_SUBTITLU } from "@/lib/constants";
 
 const images = ["/hero.jpg", "/hero2.jpg"];
 
@@ -27,11 +28,8 @@ const page = () => {
       ))}
 
       <h1>Electrician Oradea</h1>
-      <p>
-        Ai o urgență electrică? Prize care scot fum, siguranțe care sar, lipsă totală de
-        curent?
-      </p>
-      <p>Sună acum sau trimite-ne un mesaj pe WhatsApp — răspundem imediat.</p>
+      <p>{HERO_TEXT_SUBTITLU}</p>
+      <p>{HERO_TEXT_CALL_TO_ACTION}</p>
 
       <div className="buttons">
         <Button isPhone={true} href="tel:0729914750" text="Sună-ne" />

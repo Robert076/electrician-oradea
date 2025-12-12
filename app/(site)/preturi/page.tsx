@@ -1,14 +1,25 @@
+import React from "react";
 import "./style.css";
+import {
+  PRETURI_HEADER,
+  PRETURI_INTERVENTII_TITLE,
+  PRETURI_INTERVENTII_1,
+  PRETURI_INTERVENTII_2,
+  PRETURI_INTERVENTII_3,
+  PRETURI_INTERVENTII_4,
+  PRETURI_INTERVENTII_5,
+  PRETURI_INSTALATII_TITLE,
+  PRETURI_INSTALATII_1,
+  PRETURI_INSTALATII_2,
+  PRETURI_INSTALATII_3,
+  PRETURI_INSTALATII_4,
+  PRETURI_INSTALATII_5,
+  PRETURI_NOTE,
+} from "@/lib/constants";
 
 const Preturi = () => {
   return (
-    <div
-      className="prices"
-      style={{
-        marginTop: "60px",
-        width: "100%",
-      }}
-    >
+    <div className="prices" style={{ marginTop: "60px", width: "100%" }}>
       <h1
         style={{
           fontWeight: 600,
@@ -17,35 +28,28 @@ const Preturi = () => {
           backgroundImage: "url('/hero2.jpg')",
         }}
       >
-        Lista de prețuri
+        {PRETURI_HEADER}
       </h1>
 
       <div className="price-category">
-        <h3>Electrician Oradea – Intervenții</h3>
+        <h3>{PRETURI_INTERVENTII_TITLE}</h3>
         <ul>
-          <li>
-            Deplasare + constatare – 150 - 250 RON (în funcție de distanță și complexitate)
-          </li>
-          <li>Reparație – în funcție de constatare</li>
-          <li>Urgențe – Tarif de bază + 50%</li>
-          <li>Schimbat prize / întrerupătoare – 50 RON / buc (min. 150 RON)</li>
-          <li>
-            Schimbat corp iluminat – min. 50 RON / buc (în funcție de complexitate poate
-            crește)
-          </li>
+          <li>{PRETURI_INTERVENTII_1}</li>
+          <li>{PRETURI_INTERVENTII_2}</li>
+          <li>{PRETURI_INTERVENTII_3}</li>
+          <li>{PRETURI_INTERVENTII_4}</li>
+          <li>{PRETURI_INTERVENTII_5}</li>
         </ul>
       </div>
 
       <div className="price-category" style={{ marginTop: "30px" }}>
-        <h3>Electrician Oradea – Instalații A-Z</h3>
+        <h3>{PRETURI_INSTALATII_TITLE}</h3>
         <ul>
-          <li>Montaj trasee prize / întrerupătoare – 115 RON / aparat</li>
-          <li>Montaj doze distribuție – 50 RON / buc</li>
-          <li>Montaj doze aparate – 12 RON / buc</li>
-          <li>
-            Montaj aparate – 15 RON / buc (25 RON / buc dacă instalația nu e făcută de noi)
-          </li>
-          <li>Montaj tablou siguranțe – min. 250 RON (în funcție de complexitate)</li>
+          <li>{PRETURI_INSTALATII_1}</li>
+          <li>{PRETURI_INSTALATII_2}</li>
+          <li>{PRETURI_INSTALATII_3}</li>
+          <li>{PRETURI_INSTALATII_4}</li>
+          <li>{PRETURI_INSTALATII_5}</li>
         </ul>
       </div>
 
@@ -58,11 +62,12 @@ const Preturi = () => {
           textAlign: "center",
         }}
       >
-        *Prețurile pot fi negociabile în funcție de mărimea lucrării sau intervenției.
-        <br />
-        **Prețurile afişate nu conțin TVA.
-        <br />
-        Fără griji şi fără scurtcircuit în portofel.
+        {PRETURI_NOTE.split("\n").map((line, idx) => (
+          <React.Fragment key={idx}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
       </p>
     </div>
   );

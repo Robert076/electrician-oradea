@@ -1,18 +1,15 @@
-import React from "react";
 import "./style.css";
 import Button from "@/components/button/page";
 import Link from "next/link";
+import { FOOTER_CALL_TO_ACTION, FOOTER_HEADER } from "@/lib/constants";
 
 const Footer = () => {
   return (
     <footer id="footer" className="footer">
       <p className="hook" style={{ marginBottom: "20px" }}>
-        Ai o urgență electrică? Prize care scot fum, siguranțe care sar, lipsă totală de
-        curent?
+        {FOOTER_HEADER}
       </p>
-      <p className="description">
-        Sună acum sau trimite-ne un mesaj pe WhatsApp — răspundem imediat.
-      </p>
+      <p className="description">{FOOTER_CALL_TO_ACTION}</p>
       <div className="buttons">
         <Button href="tel:0729914750" text="0729914750" isPhone={true} />
         <Button

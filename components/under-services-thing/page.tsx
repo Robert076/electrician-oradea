@@ -1,6 +1,16 @@
 import React from "react";
 import "./style.css";
 import UnderServicesThingCheckbox from "./under-services-thing-checkbox/page";
+import {
+  BULINA_SERVICIU_1_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_2_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_3_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_4_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_5_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_6_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_7_TEXT_SUB_CHENAR,
+  BULINA_SERVICIU_8_TEXT_SUB_CHENAR,
+} from "@/lib/constants";
 
 const UnderServicesThing = () => {
   return (
@@ -19,45 +29,14 @@ const UnderServicesThing = () => {
           </p>
 
           <div className="checkboxes">
-            <UnderServicesThingCheckbox
-              title="Garanție pentru fiecare lucrare"
-              // description="Primești garanție completă pentru toate lucrările efectuate de echipa noastră, indiferent de complexitate."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Intervenim de urgență, indiferent de zonă"
-              // description="Echipa noastră răspunde rapid și intervine în orice cartier sau localitate din Bihor, 24/7."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Electricieni autorizați, cu experiență reală"
-              // description="Lucrările sunt executate doar de electricieni autorizați ANRE, cu experiență în instalații rezidențiale și industriale."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Comunicare clară, fără costuri ascunse"
-              // description="Îți explicăm clar ce urmează să facem, cât costă și de ce — fără taxe ascunse sau surprize."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Poze sau video după lucrare — transparență totală"
-              // description="Primești dovezi foto/video după fiecare lucrare, astfel încât să știi exact ce s-a făcut."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Plată cash sau card, direct la locație"
-              // description="Acceptăm plata în numerar sau cu cardul, pentru confortul tău maxim."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Lucrăm curat, ca pentru casa noastră"
-              // description="Ne asigurăm că zona rămâne curată, fără mizerie, fără praf și fără cabluri abandonate."
-            />
-
-            <UnderServicesThingCheckbox
-              title="Prețul e comunicat înainte de lucrare"
-              // description="Îți transmitem prețul final înainte de intervenție. Fără costuri ascunse, fără discuții ulterioare."
-            />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_1_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_2_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_3_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_4_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_5_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_6_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_7_TEXT_SUB_CHENAR} />
+            <UnderServicesThingCheckbox title={BULINA_SERVICIU_8_TEXT_SUB_CHENAR} />
           </div>
         </div>
       </div>
