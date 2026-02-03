@@ -1,4 +1,3 @@
-import React from "react";
 import "./style.css";
 import {
   BULINA_SERVICIU_1_TEXT_SUB_CHENAR,

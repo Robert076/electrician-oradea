@@ -5,15 +5,13 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("robertberes06@gmail.com");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [code, setCode] = useState(""); // pentru 2FA
   // const [step, setStep] = useState<"login" | "2fa">("login");
   const [msg, setMsg] = useState("");
-
   const router = useRouter();
 
-  // pasul 1: verificare email + parola
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
     setMsg("Se verifică...");
