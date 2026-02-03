@@ -1,4 +1,3 @@
-import React from "react";
 import "./style.css";
 import UnderServicesThingCheckbox from "./under-services-thing-checkbox/page";
 import {
