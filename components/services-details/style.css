@@ -1,44 +1,438 @@
-.services-details {
-    margin-top: 50px;
-    padding: 30px;
-    width: 100vw;
+.services-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Hero Section */
+.services-hero {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.services-hero .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.85) 0%,
+    rgba(102, 126, 234, 0.75) 100%
+  );
+}
+
+.services-hero .hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 2rem;
+  animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.02em;
+}
+
+.services-subtitle {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* Services Container */
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Service Card */
+.service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Service Icon */
+.service-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Service Content */
+.service-content {
+  flex: 1;
+}
+
+.service-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.3;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Service Check */
+.service-check {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  align-self: flex-end;
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-check {
+  transform: scale(1.1);
+}
+
+/* CTA Section */
+.services-cta {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 20px;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease 0.5s backwards;
+}
+
+.services-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0 auto 2rem;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(102, 126, 234, 0.6);
+  }
+}
+
+.cta-text {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.7;
+  margin: 0 0 2rem 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn.primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  background: linear-gradient(135deg, #7c8ef0 0%, #8a5bb5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.cta-btn.secondary {
+  background: white;
+  color: #1a1a2e;
+}
+
+.cta-btn.secondary:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .services-hero {
+    height: 350px;
+  }
+
+  .services-title {
+    font-size: 2.75rem;
+  }
+
+  .services-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-hero {
+    height: 300px;
+  }
+
+  .services-title {
+    font-size: 2.25rem;
+  }
+
+  .services-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 1.75rem;
+  }
+
+  .services-cta {
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .cta-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .cta-text {
+    font-size: 1.125rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-hero {
+    height: 250px;
+  }
+
+  .services-title {
+    font-size: 1.875rem;
+  }
+
+  .services-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-card {
+    padding: 1.5rem;
+  }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .service-title {
+    font-size: 1.25rem;
+  }
+
+  .service-description {
+    font-size: 0.938rem;
+  }
+
+  .service-check {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cta-icon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .cta-text {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 1rem;
+    padding: 0.875rem 2rem;
+  }
+}
+
+/* Accessibility */
+.service-card:focus-within,
+.cta-btn:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 4px;
+}
+
+/* Print Styles */
+@media print {
+  .services-page {
     background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+  }
 
-.services-details>.info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+  .services-hero .hero-overlay {
+    display: none;
+  }
 
-.services-details>.info> h1 {
-    font-weight: 600;
-    width: 100vw;
-    padding: 45px;
-    text-align: center;
-    color: white;
-    text-shadow: var(--text-shadow);
-    background-position: center;
-    background-size: cover;
-}
+  .services-cta {
+    background: white;
+    color: black;
+    border: 2px solid #ccc;
+  }
 
-.services-details>.info>p {
-    text-align: center;
-}
+  .cta-buttons {
+    display: none;
+  }
 
-.services-details>.info>.checkboxes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  .service-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
 }
-.services-details>.info>.checkboxes>.under-services-thing-checkbox {
-    padding-top: 30px;
-    width: 80%;
-}
-
