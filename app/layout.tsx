@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/navbar/page";
 import Footer from "@/components/footer/page";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieNotice from "@/components/CookieNotice";
 import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
@@ -34,6 +35,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </div>
+        <CookieNotice />
       </body>
     </html>
   );
