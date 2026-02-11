@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/page";
 import Footer from "@/components/footer/page";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { Toaster } from "react-hot-toast";
 
 const poppins = Poppins({
@@ -26,6 +27,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={poppins.className}>
+        <GoogleAnalytics gaId="G-7419YV34NP" />
         <div className="layout">
           <Navbar />
           <Toaster position="bottom-center" />
