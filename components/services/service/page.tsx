@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import "./style.css";
+import React from "react";
 import Link from "next/link";
+import { useScrollReveal } from "@/lib/useScrollReveal";
 
 interface ServiceProps {
   iconPath: string;
@@ -10,40 +10,21 @@ interface ServiceProps {
 }
 
 const Service: React.FC<ServiceProps> = ({ iconPath, title, text }) => {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const element = ref.current;
-
-    if (!element) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            element.classList.add("reveal");
-            observer.unobserve(element);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    observer.observe(element);
-
-    return () => observer.disconnect();
-  }, []);
+  const ref = useScrollReveal<HTMLDivElement>();
 
   return (
-    <Link href="/servicii" style={{ textDecoration: "none", color: "black" }}>
-      <div className="service" ref={ref}>
-        <div className="icon">
-          <img src={iconPath} alt="" />
+    <Link href="/servicii" className="no-underline text-inherit w-full md:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]">
+      <div
+        ref={ref}
+        className="reveal-on-scroll group bg-white rounded-2xl border border-gray-100 shadow-sm p-8 flex flex-col items-center text-center h-full hover:border-primary/30 hover:shadow-md transition-all duration-300"
+      >
+        <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-blue-50 group-hover:bg-primary/10 transition-colors mb-5">
+          <img src={iconPath} alt="" className="w-8 h-8" />
         </div>
-        <div className="wrapper">
-          <div className="title">{title}</div>
-          <div className="text">{text}</div>
-        </div>
+        <h3 className="text-lg font-semibold mb-3 group-hover:text-primary transition-colors">
+          {title}
+        </h3>
+        <p className="text-sm text-gray-500 leading-relaxed">{text}</p>
       </div>
     </Link>
   );

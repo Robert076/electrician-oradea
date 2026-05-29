@@ -11,10 +11,14 @@ export async function sendMail({
   subject: string;
   text: string;
 }) {
-  await resend.emails.send({
+  const { error } = await resend.emails.send({
     from: "office@electricianoradea.ro",
     to,
     subject,
     text,
   });
+
+  if (error) {
+    throw new Error(`Eroare la trimiterea emailului: ${error.message}`);
+  }
 }

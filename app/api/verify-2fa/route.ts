@@ -3,13 +3,20 @@ import { createSession } from "@/lib/session";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-  const { email, code } = await req.json();
+  try {
+    const { email, code } = await req.json();
 
-  const valid = await verify2FACode(email, code);
+    if (!email || !code) {
+      return NextResponse.json({ error: "Email și cod obligatorii." }, { status: 400 });
+    }
 
-  if (!valid) return NextResponse.json({ error: "Cod invalid sau expirat" }, { status: 400 });
+    const valid = await verify2FACode(email, code);
 
-  await createSession("admin");
+    if (!valid) return NextResponse.json({ error: "Cod invalid sau expirat." }, { status: 400 });
 
-  return NextResponse.json({ success: true });
+    await createSession("admin");
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json({ error: "Cerere invalidă." }, { status: 400 });
+  }
 }

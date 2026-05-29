@@ -1,74 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
   --primary: #0057B8;
-  --secondary: rgb(31, 232, 31);
-  --border: 1px solid rgb(238, 238, 238);
-  --lightgray: rgb(250, 250, 250);
-  --transition: 0.1s all ease-in-out;
-  --text-secondary: #888;
-  --font-size-xxxl: 80px;
-  --font-size-xxll: 55px;
-  --font-size-xxl: 30px;
-  --font-size-xl: 25px;
-  --font-size-ll: 22px;
-  --font-size-l: 16px;
-  --font-size-m: 14px;
-  --font-size-xs: 13px;
-  --border-radius: 20px;
-  --box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.1);
-  --text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --secondary: #1fe81f;
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box !important;
-  transition: var(--transition);
-} 
+  box-sizing: border-box;
+}
 
-/* Asigură că layout-ul folosește toată înălțimea */
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  background: var(--lightgray);
-  overflow-x: hidden !important; 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* wrapper principal */
-.layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+body {
+  background-image: radial-gradient(circle, #e5e7eb 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-/* main ocupă tot spațiul dintre navbar și footer */
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+/* Scroll reveal utility */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
-/* stil footer */
-.footer {
-  background: var(--lightgray);
-  text-align: center;
-  padding: 5rem;
-  margin-top: 5rem;
-}
-
-.footer > .hook {
-  font-weight: 600;
-  font-size: var(--font-size-xxl);
-}
-
-.footer > .description {
-  color: var(--text-secondary);
-}
-
-.footer > .button {
-  margin-top: 20px;
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }

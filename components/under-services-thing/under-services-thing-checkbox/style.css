@@ -1,17 +1,1 @@
-.under-services-thing-checkbox img{
-    width: 42px;
-    height: 42px;
-    margin-right: 5px;
-}
-
-.under-services-thing-checkbox {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.under-services-thing-checkbox>.info>h1{
-    font-size: var(--font-size-l);
-}
+/* unused - styles moved to Tailwind */

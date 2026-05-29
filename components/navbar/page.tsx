@@ -1,8 +1,16 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "./style.css";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+
+const links = [
+  { href: "/", label: "Acasa" },
+  { href: "/despre-noi", label: "Despre noi" },
+  { href: "/servicii", label: "Servicii" },
+  { href: "/preturi", label: "Prețuri" },
+  { href: "/contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,54 +20,68 @@ const Navbar = () => {
   }, [open]);
 
   return (
-    <div className="navbar">
-      <div className="logo-wrapper">
-        <img src="/logo.png" alt="" />
-        <Link className="logo" href="/">
-          <span>Electrician</span> Oradea
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 no-underline">
+          <img src="/logo.png" alt="Logo" className="h-10 w-10 object-contain" />
+          <span className="text-lg font-semibold">
+            <span className="text-primary">Electrician</span>{" "}
+            <span className="text-secondary">Oradea</span>
+          </span>
         </Link>
-      </div>
-      {/* ICON MENIU */}
-      <div className="menu-icon" onClick={() => setOpen(true)}>
-        <Menu size={28} />
-      </div>
-      {/* MENIU FULLSCREEN EXACT CA EXEMPLUL 2 */}
-      <div className={`mobile-menu ${open ? "show" : ""}`}>
-        <div className="close-btn" onClick={() => setOpen(false)}>
-          <X size={38} />
+
+        {/* Desktop links */}
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-gray-500 hover:text-primary transition-colors no-underline"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        <ul>
-          <li onClick={() => setOpen(false)}>
-            <Link href="/">Acasa</Link>
-          </li>
-          <li onClick={() => setOpen(false)}>
-            <Link href="/despre-noi">Despre noi</Link>
-          </li>
-          <li onClick={() => setOpen(false)}>
-            <Link href="/servicii">Servicii</Link>
-          </li>
-          <li onClick={() => setOpen(false)}>
-            <Link href="/preturi">Prețuri</Link>
-          </li>
-          <li onClick={() => setOpen(false)}>
-            <Link href="/contact">Contact</Link>
-          </li>
-          <li onClick={() => setOpen(false)}>
-            <Link href="/blog">Blog</Link>
-          </li>
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden text-primary p-2"
+          onClick={() => setOpen(true)}
+          aria-label="Deschide meniu"
+        >
+          <Menu size={24} />
+        </button>
+      </div>
+
+      {/* Mobile fullscreen menu */}
+      <div
+        className={`fixed inset-0 bg-white z-[999] flex flex-col items-center justify-center transition-all duration-300 md:hidden ${
+          open ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+      >
+        <button
+          className="absolute bottom-10 text-primary"
+          onClick={() => setOpen(false)}
+          aria-label="Închide meniu"
+        >
+          <X size={36} />
+        </button>
+        <ul className="list-none p-0 w-full text-center">
+          {links.map((link) => (
+            <li key={link.href} className="border-b border-gray-100">
+              <Link
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block py-5 text-xl font-medium text-primary no-underline hover:bg-gray-50 transition-colors"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
-      {/* Desktop links rămân la fel */}
-      <div className="nav-links">
-        <Link href="/">Acasa</Link>
-        <Link href="/despre-noi">Despre noi</Link>
-        <Link href="/servicii">Servicii</Link>
-        <Link href="/preturi">Prețuri</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/blog">Blog</Link>
-      </div>
-    </div>
+    </nav>
   );
 };
 

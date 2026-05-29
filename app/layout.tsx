@@ -27,12 +27,12 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={poppins.className}>
+      <body className={`${poppins.className} bg-gray-50 text-gray-900 antialiased`}>
         <GoogleAnalytics gaId="G-7419YV34NP" />
-        <div className="layout">
+        <div className="flex flex-col min-h-screen">
           <Navbar />
           <Toaster position="bottom-center" />
-          <main>{children}</main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
         <CookieNotice />

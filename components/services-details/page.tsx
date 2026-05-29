@@ -11,55 +11,44 @@ import {
   SERVICIU_5_TEXT_TITLU,
   SERVICIU_CALL_TO_ACTION,
 } from "@/lib/constants";
-import "./style.css";
-import UnderServicesThingCheckbox from "@/components/under-services-thing/under-services-thing-checkbox/page";
 
-export const servicesData = [
-  {
-    title: SERVICIU_1_TEXT_TITLU,
-    description: SERVICIU_1_TEXT_DESCRIERE,
-  },
-  {
-    title: SERVICIU_2_TEXT_TITLU,
-    description: SERVICIU_2_TEXT_DESCRIERE,
-  },
-  {
-    title: SERVICIU_3_TEXT_TITLU,
-    description: SERVICIU_3_TEXT_DESCRIERE,
-  },
-  {
-    title: SERVICIU_4_TEXT_TITLU,
-    description: SERVICIU_4_TEXT_DESCRIERE,
-  },
-  {
-    title: SERVICIU_5_TEXT_TITLU,
-    description: SERVICIU_5_TEXT_DESCRIERE,
-  },
+const servicesData = [
+  { title: SERVICIU_1_TEXT_TITLU, description: SERVICIU_1_TEXT_DESCRIERE },
+  { title: SERVICIU_2_TEXT_TITLU, description: SERVICIU_2_TEXT_DESCRIERE },
+  { title: SERVICIU_3_TEXT_TITLU, description: SERVICIU_3_TEXT_DESCRIERE },
+  { title: SERVICIU_4_TEXT_TITLU, description: SERVICIU_4_TEXT_DESCRIERE },
+  { title: SERVICIU_5_TEXT_TITLU, description: SERVICIU_5_TEXT_DESCRIERE },
 ];
 
 const MainServices = () => {
   return (
-    <div className="services-details">
-      <div className="info">
-        <h1
-          style={{
-            backgroundImage: "url('/hero.jpg')",
-          }}
-        >
+    <div className="max-w-5xl mx-auto px-4 sm:px-8 py-16 sm:py-24">
+      {/* Header */}
+      <div className="text-center mb-16">
+        <p className="text-sm font-medium tracking-widest uppercase text-primary mb-3">Ce oferim</p>
+        <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 tracking-tight">
           Serviciile noastre
         </h1>
+      </div>
 
-        <div className="checkboxes">
-          {servicesData.map((service, index) => (
-            <UnderServicesThingCheckbox
-              key={index}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </div>
+      {/* Services list */}
+      <div className="space-y-5">
+        {servicesData.map((service, index) => (
+          <div key={index} className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-8 flex items-start gap-4">
+            <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <span className="w-3 h-3 rounded-full bg-primary" />
+            </span>
+            <div>
+              <h3 className="font-semibold text-gray-900 text-base sm:text-lg mb-1">{service.title}</h3>
+              <p className="text-gray-500 text-sm sm:text-base leading-relaxed">{service.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
 
-        <p style={{ marginTop: "50px", maxWidth: "1000px" }} className="subtext">
+      {/* CTA */}
+      <div className="mt-12 text-center bg-gray-50 rounded-2xl py-8 px-6">
+        <p className="text-gray-500 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
           {SERVICIU_CALL_TO_ACTION}
         </p>
       </div>
